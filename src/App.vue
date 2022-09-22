@@ -1,18 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Sidebar @select="setName"></Sidebar>
+    <Tree :name="name"></Tree>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/Sidebar.vue'
+import Tree from './components/Tree.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Sidebar,
+    Tree,
+  },
+  data() {
+    return {
+      name: '',
+    }
+  },
+  methods: {
+    setName(name) {
+      this.name = name
+    },
+  },
 }
 </script>
 
@@ -21,8 +33,12 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
 }
 </style>

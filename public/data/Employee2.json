@@ -1,0 +1,86 @@
+{
+    "children": [
+        {
+            "children": [],
+            "name": "age",
+            "type": "uint8"
+        },
+        {
+            "children": [],
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "children": [],
+            "name": "salary",
+            "type": "uint16"
+        },
+        {
+            "children": [],
+            "name": "bonus",
+            "type": "uint16"
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "name": "DEVELOPER (0)",
+                    "type": "uint8"
+                },
+                {
+                    "children": [],
+                    "name": "TEAM_LEAD (1)",
+                    "type": "uint8"
+                },
+                {
+                    "children": [],
+                    "name": "CTO (2)",
+                    "type": "uint8"
+                }
+            ],
+            "name": "role",
+            "type": "Role"
+        },
+        {
+            "children": [
+                {
+                    "children": [],
+                    "name": "yearsOfExperience",
+                    "type": "bit:6"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "name": "CPP (0)",
+                            "type": "bit:2"
+                        },
+                        {
+                            "children": [],
+                            "name": "JAVA (1)",
+                            "type": "bit:2"
+                        },
+                        {
+                            "children": [],
+                            "name": "PYTHON (2)",
+                            "type": "bit:2"
+                        },
+                        {
+                            "children": [],
+                            "name": "JS (3)",
+                            "type": "bit:2"
+                        }
+                    ],
+                    "comment": "programmingLanguage comment.",
+                    "name": "programmingLanguage",
+                    "type": "Language"
+                }
+            ],
+            "name": "skills",
+            "type": "Experience"
+        }
+    ],
+    "comment": "struct Employee comment.",
+    "name": "Employee2",
+    "type": "Employee2"
+}
