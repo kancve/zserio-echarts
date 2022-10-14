@@ -33,7 +33,7 @@ export default {
         if (val !== '') {
           this.$axios.get('/data/' + val + '.json').then((result) => {
             this.data = result.data
-            this.setOption()
+            this.setOption(true)
           })
         }
       },
@@ -47,9 +47,6 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleResize)
-    if (!this.chart) {
-      return
-    }
     this.chart.dispose()
     this.chart = null
   },
@@ -66,7 +63,7 @@ export default {
       this.form = form
       this.setOption()
     },
-    setOption() {
+    setOption(clear) {
       var option = {
         tooltip: {
           trigger: 'item',
@@ -81,7 +78,7 @@ export default {
             left: '8%',
             bottom: '2%',
             right: '20%',
-            symbolSize: 14,
+            symbolSize: this.form.fontSize,
             edgeShape: 'polyline',
             edgeForkPosition: '63%',
             initialTreeDepth: this.form.treeDepth,
@@ -109,6 +106,9 @@ export default {
             animationDurationUpdate: 750,
           },
         ],
+      }
+      if (clear) {
+        this.chart.clear()
       }
       this.chart.setOption(option)
     },
